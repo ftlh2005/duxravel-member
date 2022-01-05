@@ -1,0 +1,50 @@
+{
+  "name": "duxphp/duxravel-member",
+  "description": "Duxravel Member Application",
+  "type": "duxravel-app",
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "DuxPHP",
+      "email": "admin@duxphp.com"
+    }
+  ],
+  "minimum-stability": "dev",
+  "prefer-stable": true,
+  "require": {
+    "duxphp/duxravel-app": "*"
+  },
+  "require-dev": {
+  },
+  "autoload": {
+    "psr-4": {
+      "Modules\\": "src"
+    }
+  },
+  "extra": {
+    "branch-alias": {
+    },
+    "laravel": {
+      "providers": [
+        "Modules\\Member\\Providers\\MemberServiceProvider"
+      ]
+    },
+    "duxravel": {
+      "service": [
+      ],
+      "route": [
+        "src/Member/Route/Api.php",
+        "src/Member/Route/AuthAdmin.php",
+        "src/Member/Route/Member.php"
+      ],
+      "menu": [
+        "src/Member/Menu/Admin.php"
+      ]
+    }
+  },
+  "config": {
+    "optimize-autoloader": true,
+    "sort-packages": true,
+    "preferred-install": "dist"
+  }
+}
