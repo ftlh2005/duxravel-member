@@ -1,6 +1,6 @@
 <?php
 
-namespace Modules\Project\Providers;
+namespace Modules\Member\Providers;
 
 use Illuminate\Routing\Router;
 use Illuminate\Support\ServiceProvider;
