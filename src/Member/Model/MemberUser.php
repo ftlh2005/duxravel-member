@@ -23,6 +23,8 @@ class MemberUser extends User implements JWTSubject
 
     protected $fillable = ['tel', 'nickname', 'password'];
 
+    protected $dates = ['login_at'];
+
     public function getSexNameAttribute()
     {
         switch ($this->sex) {
