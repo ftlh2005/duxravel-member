@@ -15,7 +15,7 @@ class Auth extends Api
      */
     public function login()
     {
-        $credentials = request(['tel', 'password']);
+        $credentials = request(['nickname', 'password']);
         if (!auth('member')->attempt($credentials)) {
             return $this->error('登录失败', 401);
         }
