@@ -23,6 +23,7 @@
 
 ## 说明
 本模块需配合Duxravel使用，是从 duxphp/duxravel-member 拉取过来修改而成
+
 不能和 duxphp/duxravel-member 共存使用
 
 
@@ -46,6 +47,10 @@ Content-MD5	    1ED5ED64ED37F4F73E8F018187AF450E	数据签名
 Content-Date	1624942695	当前请求时间戳
 AccessKey	    123456	后台创建的 SECRET_ID
 Authorization	Bearer xxxx	用户授权 token (JWT授权时需要)
+
+数据签名
+Content-MD5 = md5('url=当前请求完整url' + '&timestamp=当前请求时间戳' + '&key=后台SECRET_KEY')
+
 ```
 
 
@@ -79,7 +84,7 @@ post api/member/auth/info
 2、修改登录tel为nickname
 ```
 
-## 维护者
+## 原作者
 
 [@duxphp](https://github.com/duxphp)
 
