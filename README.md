@@ -22,9 +22,9 @@
 </p>
 
 ## 说明
-本模块需配合Duxravel使用，是从 duxphp/duxravel-member 拉取过来修改而成 不能和 duxphp/duxravel-member 共存使用
-1、修复Api\Auth.php auth权限指定名称
-2、修改登录tel为nickname
+本模块需配合Duxravel使用，是从 duxphp/duxravel-member 拉取过来修改而成
+不能和 duxphp/duxravel-member 共存使用
+
 
 ## 应用安装
 ```
@@ -64,17 +64,19 @@ headers.upsert({
  * @params string tel 手机号码
  * @params string password 登录密码
  */
-post api/auth/login
+post api/member/auth/login
 
 /**
  * 用户信息 （授权）
  */
-post api/auth/info
+post api/member/auth/info
 ```
 
 ## 更新日志
 ```
-暂无
+20220527
+1、修复Api\Auth.php auth权限指定名称
+2、修改登录tel为nickname
 ```
 
 ## 维护者
