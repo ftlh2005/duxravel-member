@@ -39,6 +39,7 @@ class Auth extends Api
                 'email' => $user->email,
                 'nickname' => $user->nickname,
                 'levelname' => $user->level->name,
+                'level_id'  => $user->level->id,
                 'growth' => $user->growth,
                 'data' => $user->data,
             ],
