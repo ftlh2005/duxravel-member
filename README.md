@@ -36,15 +36,15 @@ composer require ftlh2005/duxravel-member dev-main
 
 ## 接口授权
 请求登录接口后回去 token 在 header 头中的 Authorization 参数带入授权 token 可请求需授权接口
-`
+```
 请求 headers
-名称	示例	说明
-Accept	application/json	返回类型
-Content-MD5	1ED5ED64ED37F4F73E8F018187AF450E	数据签名
+名称      	    示例	                说明
+Accept	        application/json	返回类型
+Content-MD5	    1ED5ED64ED37F4F73E8F018187AF450E	数据签名
 Content-Date	1624942695	当前请求时间戳
-AccessKey	123456	后台创建的 SECRET_ID
+AccessKey	    123456	后台创建的 SECRET_ID
 Authorization	Bearer xxxx	用户授权 token (JWT授权时需要)
-`
+```
 
 
 ```
