@@ -23,7 +23,7 @@ class MemberServiceProvider extends ServiceProvider
 
         app('config')->set('auth.providers.members', [
             'driver' => 'eloquent',
-            'model' => \Modules\Menber\Model\MemberUser::class,
+            'model' => \Modules\Member\Model\MemberUser::class,
         ]);
 
     }

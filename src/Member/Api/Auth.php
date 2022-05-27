@@ -16,7 +16,7 @@ class Auth extends Api
     public function login()
     {
         $credentials = request(['tel', 'password']);
-        if (!auth('user')->attempt($credentials)) {
+        if (!auth('member')->attempt($credentials)) {
             return $this->error('登录失败', 401);
         }
         return $this->info();
@@ -29,7 +29,7 @@ class Auth extends Api
      */
     public function info()
     {
-        $user = auth('user')->user();
+        $user = auth('member')->user();
         return $this->success([
             'userInfo' => [
                 'user_id' => $user->user_id,
@@ -42,7 +42,7 @@ class Auth extends Api
                 'growth' => $user->growth,
                 'data' => $user->data,
             ],
-            'token' => 'Bearer ' . auth('user')->tokenById($user->user_id),
+            'token' => 'Bearer ' . auth('member')->tokenById($user->user_id),
         ]);
     }
 
@@ -52,7 +52,7 @@ class Auth extends Api
      */
     public function logout()
     {
-        auth('user')->logout();
+        auth('member')->logout();
         return $this->success([], '退出登录成功');
     }
 }
