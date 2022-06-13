@@ -40,7 +40,8 @@ class User extends \Modules\System\Admin\Expend
         ]);
         $column = $table->column('操作')->width(150);
         $column->link('编辑', 'admin.member.user.page', ['id' => 'user_id'])->type('dialog');
-        $column->link('删除', 'admin.member.user.del', ['id' => 'user_id'])->type('ajax', ['type' => 'post']);
+        $column->link('删除', 'admin.member.user.del', ['id' => 'user_id'])->type('ajax', ['method' => 'post']);
+
         return $table;
     }
 
