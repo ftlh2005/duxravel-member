@@ -17,9 +17,13 @@ class Auth extends Api
     {
         $credentials = request(['nickname', 'password']);
         if (!auth('member')->attempt($credentials)) {
-            return $this->error('登录失败', 401);
+            return $this->error('登录失败，账号密码错误', 401);
         }
-        return $this->info();
+        $info = $this->info();
+        if (empty($info->status)) {
+            return $this->error('登录失败，账号无权限', 401);
+        }
+        return $info;
     }
 
     /**
