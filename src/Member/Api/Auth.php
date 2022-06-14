@@ -20,7 +20,7 @@ class Auth extends Api
             return $this->error('登录失败，账号密码错误', 401);
         }
         $info = $this->info();
-        if (empty($info->status)) {
+        if (empty($info['userInfo']['status'])) {
             return $this->error('登录失败，账号无权限', 401);
         }
         return $info;
@@ -46,6 +46,7 @@ class Auth extends Api
                 'level_id'  => $user->level->level_id,
                 'growth' => $user->growth,
                 'data' => $user->data,
+                'status' => $user->status
             ],
             'token' => 'Bearer ' . auth('member')->tokenById($user->user_id),
         ]);
