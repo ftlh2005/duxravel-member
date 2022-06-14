@@ -19,13 +19,7 @@ class Auth extends Api
         if (!auth('member')->attempt($credentials)) {
             return $this->error('登录失败，账号密码错误', 401);
         }
-        $info = $this->info();
-        $userInfo = $info->data;
-        print_r($userInfo);
-        if (empty($userInfo->status)) {
-            return $this->error('登录失败，账号无权限', 401);
-        }
-        return $info;
+        return $this->info();
     }
 
     /**
@@ -36,6 +30,10 @@ class Auth extends Api
     public function info()
     {
         $user = auth('member')->user();
+        if (empty($user->status)) {
+            return $this->error('登录失败，账号无权限', 401);
+        }
+
         return $this->success([
             'userInfo' => [
                 'user_id' => $user->user_id,
