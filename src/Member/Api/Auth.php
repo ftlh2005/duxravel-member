@@ -20,8 +20,9 @@ class Auth extends Api
             return $this->error('登录失败，账号密码错误', 401);
         }
         $info = $this->info();
-        print_r($info);
-        if (empty($info['data']['userInfo']['status'])) {
+        $userInfo = $info->data;
+        print_r($userInfo);
+        if (empty($userInfo->status)) {
             return $this->error('登录失败，账号无权限', 401);
         }
         return $info;
